@@ -86,3 +86,53 @@ Business Logic
 ↓
 
 Database
+
+## High-Level System Flow
+
+```text
+                    User
+                      │
+                      ▼
+            ARES Mobile Application
+                      │
+                      ▼
+              Authentication Service
+                      │
+                      ▼
+                 FastAPI Backend
+      ┌──────────────┼───────────────┐
+      │              │               │
+      ▼              ▼               ▼
+ Risk Engine     Database        Maps Service
+      │
+      ▼
+ AI Decision Support
+      │
+      ▼
+ Emergency Response System
+```
+## Technology Stack
+
+| Layer | Technology | Purpose |
+|-------|------------|---------|
+| Mobile Application | Flutter | Cross-platform mobile app |
+| Backend | FastAPI | REST API and business logic |
+| Programming Language | Python | Backend & AI development |
+| Database | SQLite (initial) | Store application data |
+| Database (future) | PostgreSQL | Production database |
+| Version Control | Git & GitHub | Source code management |
+| UI/UX Design | Figma | User interface design |
+## Future Integrations
+
+The following components are planned for future versions of ARES:
+
+- AFAD Integration
+- Earthquake Data API (Kandilli Observatory / AFAD)
+- Weather API
+- Google Maps API / OpenStreetMap
+- Push Notification Service
+- Arduino Sensor Network
+- ESP32 IoT Devices
+- Drone Monitoring System
+- AI Prediction Engine
+- Emergency Communication System
