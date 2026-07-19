@@ -1,20 +1,18 @@
 #include <stdio.h>
 
+
+#include "../include/menu.h"
+#include "../include/login.h"
+#include "../include/disaster.h"
+#include "../include/risk.h"
+
 int main()
 {
     int choice;
 
     while (1)
     {
-        printf("\n=====================================\n");
-        printf("              ARES v0.1\n");
-        printf("Artificial Response & Emergency System\n");
-        printf("=====================================\n");
-
-        printf("\n1. Login\n");
-        printf("2. Report Disaster\n");
-        printf("3. Risk Analysis\n");
-        printf("4. Exit\n");
+        showMenu();
 
         printf("\nSelect an option: ");
         scanf("%d", &choice);
@@ -22,16 +20,16 @@ int main()
         switch (choice)
         {
             case 1:
-                printf("\n[Login Module]\n");
+                login();
                 break;
 
             case 2:
-                printf("\n[Disaster Report Module]\n");
+                reportDisaster();
                 break;
 
             case 3:
-                printf("\n[Risk Analysis Module]\n");
-                break;
+    riskAnalysis();
+    break;
 
             case 4:
                 printf("\nClosing ARES...\n");
@@ -41,4 +39,6 @@ int main()
                 printf("\nInvalid option!\n");
         }
     }
+
+    return 0;
 }

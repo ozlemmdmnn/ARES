@@ -4,10 +4,9 @@
 void showMenu();
 
 #endif
-void login();
-#ifndef LOGIN_H
-#define LOGIN_H
+#ifndef MENU_H
+#define MENU_H
 
-void login();
+void showMenu();
 
 #endif

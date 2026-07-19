@@ -5,3 +5,9 @@ void showMenu();
 
 #endif
 void reportDisaster();
+#ifndef DISASTER_H
+#define DISASTER_H
+
+void reportDisaster();
+
+#endif

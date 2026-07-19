@@ -1,7 +1,6 @@
-#ifndef MENU_H
-#define MENU_H
+#ifndef RISK_H
+#define RISK_H
 
-void showMenu();
+void riskAnalysis();
 
 #endif
-void riskAnalysis();
