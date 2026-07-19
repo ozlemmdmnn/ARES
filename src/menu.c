@@ -3,12 +3,14 @@
 
 void showMenu()
 {
-    printf("\n========== ARES ==========\n");
-    printf("1. Login\n");
+    printf("\n=====================================\n");
+    printf("              ARES v0.1\n");
+    printf("Artificial Response & Emergency System\n");
+    printf("=====================================\n");
+
+    printf("\n1. Login\n");
     printf("2. Report Disaster\n");
     printf("3. Risk Analysis\n");
-    printf("4. Exit\n");
+    printf("4. Resource Management\n");
+    printf("5. Exit\n");
 }
-#include <stdio.h>
-#include "../include/menu.h"
-

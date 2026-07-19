@@ -1,4 +1,6 @@
+#include "../include/resource.h"
 #include <stdio.h>
+
 
 
 #include "../include/menu.h"
@@ -32,8 +34,12 @@ int main()
     break;
 
             case 4:
-                printf("\nClosing ARES...\n");
-                return 0;
+    resourceManagement();
+    break;
+
+case 5:
+    printf("\nClosing ARES...\n");
+    return 0;
 
             default:
                 printf("\nInvalid option!\n");
