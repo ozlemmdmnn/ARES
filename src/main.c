@@ -1,6 +1,6 @@
 #include "../include/resource.h"
 #include <stdio.h>
-
+#include "../include/database.h"
 
 
 #include "../include/menu.h"
@@ -18,6 +18,7 @@ int main()
 
         printf("\nSelect an option: ");
         scanf("%d", &choice);
+        while (getchar() != '\n');
 
         switch (choice)
         {
@@ -36,8 +37,11 @@ int main()
             case 4:
     resourceManagement();
     break;
+            case 5:
+    viewReports();
+    break;
 
-case 5:
+case 6:
     printf("\nClosing ARES...\n");
     return 0;
 

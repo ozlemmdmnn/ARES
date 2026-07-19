@@ -1,7 +1,6 @@
-#ifndef MENU_H
-#define MENU_H
+#ifndef DATABASE_H
+#define DATABASE_H
 
-void showMenu();
+void viewReports();
 
 #endif
-void initializeDatabase();

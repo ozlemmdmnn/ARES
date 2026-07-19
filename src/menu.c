@@ -8,9 +8,10 @@ void showMenu()
     printf("Artificial Response & Emergency System\n");
     printf("=====================================\n");
 
-    printf("\n1. Login\n");
-    printf("2. Report Disaster\n");
-    printf("3. Risk Analysis\n");
-    printf("4. Resource Management\n");
-    printf("5. Exit\n");
+   printf("\n1. Login\n");
+printf("2. Report Disaster\n");
+printf("3. Risk Analysis\n");
+printf("4. Resource Management\n");
+printf("5. View Reports\n");
+printf("6. Exit\n");
 }

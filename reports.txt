@@ -1,0 +1,10 @@
+------------------------------
+Disaster Type: Earthquake
+City: malatya
+Description: Earthquake damaged several buildings.
+
+------------------------------
+Disaster Type: Flood
+City: Kayseri
+Description: Test report
+
