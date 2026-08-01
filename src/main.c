@@ -10,6 +10,7 @@
 #include "../include/delete.h"
 #include <string.h>
 #include "../include/status.h"
+#include "../include/statistics.h"
 int main()
 {
     int choice;
@@ -98,7 +99,7 @@ case 5:
 
 
 case 8:
-    updateStatus();
+    showStatistics();
     break;
 
 case 9:

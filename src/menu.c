@@ -15,6 +15,6 @@ void showMenu()
     printf("5. View Reports\n");
     printf("6. Search Reports\n");
     printf("7. Delete Report\n");
-    printf("8. Update Status\n");
+    printf("8. Statistics\n");
     printf("9. Exit\n");
 }
