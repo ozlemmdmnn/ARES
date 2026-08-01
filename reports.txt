@@ -8,3 +8,26 @@ Disaster Type: Flood
 City: Kayseri
 Description: Test report
 
+------------------------------
+Disaster Type: Earthquake
+City: Malatya
+Description: Buildings damaged after earthquake.
+
+=====================================
+Report ID      : 1
+Date           : 20/07/2026
+Time           : 01:37
+Disaster Type  : Earthquake
+City           : Malatya
+Description    : Several buildings damaged after the earthquake.
+=====================================
+
+=====================================
+Report ID      : 1
+Date           : 21/07/2026
+Time           : 19:43
+Disaster Type  : 2
+City           : 1
+Description    : 1
+=====================================
+

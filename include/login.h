@@ -1,13 +1,8 @@
-#ifndef MENU_H
-#define MENU_H
-
-void showMenu();
-
-#endif
-void login();
 #ifndef LOGIN_H
 #define LOGIN_H
 
-void login();
+extern char currentRole[50];
+
+int login();
 
 #endif
