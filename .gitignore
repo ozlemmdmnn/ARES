@@ -1,4 +1,11 @@
-.vscode/
-*.exe
+ARES.exe
+
 *.o
-*.out
+
+*.obj
+
+*.exe
+
+.vscode/
+
+build/

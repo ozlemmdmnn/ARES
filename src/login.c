@@ -1,21 +1,18 @@
 #include <stdio.h>
 #include <string.h>
+
 #include "../include/login.h"
 
 char currentRole[50] = "";
 
-
 int login()
 {
-    char currentRole[50];
     char username[50];
     char password[50];
 
     char fileUsername[50];
     char filePassword[50];
     char role[50];
-
-    int loginSuccess = 0;
 
     FILE *file = fopen("users.txt", "r");
 
@@ -33,7 +30,8 @@ int login()
     printf("Password: ");
     scanf("%49s", password);
 
-    while (fscanf(file, "%49[^;];%49[^;];%49[^\n]\n",
+    while (fscanf(file,
+                  "%49[^;];%49[^;];%49[^\n]\n",
                   fileUsername,
                   filePassword,
                   role) == 3)
@@ -41,11 +39,12 @@ int login()
         if (strcmp(username, fileUsername) == 0 &&
             strcmp(password, filePassword) == 0)
         {
-            loginSuccess = 1;
-
-            printf("\nLogin Successful!\n");
-            printf("Welcome %s\n", role);
             strcpy(currentRole, role);
+
+            printf("\n=====================================\n");
+            printf("Login Successful!\n");
+            printf("Role : %s\n", currentRole);
+            printf("=====================================\n");
 
             fclose(file);
             return 1;
@@ -54,10 +53,6 @@ int login()
 
     fclose(file);
 
-    if (!loginSuccess)
-    {
-        printf("\nInvalid username or password!\n");
-    }
-
+    printf("\nInvalid username or password!\n");
     return 0;
 }

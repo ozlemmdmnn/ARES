@@ -1,21 +1,63 @@
-# ARES
+# ARES - Artificial Response & Emergency System
 
-## Artificial Response & Emergency System
+## 📌 About
 
-ARES is a long-term software engineering project that aims to develop an AI-assisted disaster response and decision support platform.
+ARES is a disaster management and emergency response system developed in C.
 
-## Goals
+The project aims to help emergency teams manage disaster reports, analyze risks and coordinate resources efficiently.
 
-- Analyze disaster risks
-- Support emergency resource planning
-- Generate disaster reports
-- Learn software engineering step by step
+---
 
-## Technologies (Planned)
+## 🚀 Features
+
+- Login System
+- Disaster Reporting
+- Risk Analysis
+- Resource Management
+- View Reports
+- Search Reports
+- Delete Reports
+- Statistics Module
+
+---
+
+## 🛠 Technologies
 
 - C
-- Git & GitHub
-- Python
-- SQLite
-- FastAPI
-- Flutter
+- GCC
+- Git
+- GitHub
+
+---
+
+## 📂 Project Structure
+
+```
+ARES
+│
+├── include
+├── src
+├── assets
+├── docs
+├── screenshots
+└── README.md
+```
+
+---
+
+## 📅 Roadmap
+
+- [x] Console Prototype
+- [x] Report Management
+- [x] Statistics Module
+- [ ] SQLite Database
+- [ ] Desktop Application (Qt)
+- [ ] AI Decision Support
+- [ ] Interactive Turkey Map
+
+---
+
+## 👩‍💻 Developer
+
+Özlem Duman
+Electrical & Electronics Engineering Student

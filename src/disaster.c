@@ -4,18 +4,14 @@
 
 #include "../include/disaster.h"
 #include "../include/report.h"
+#include "../include/database_sqlite.h"
 
 void reportDisaster()
 {
-    static int reportID = 1;
-
     Report report;
-    FILE *file;
 
     time_t now = time(NULL);
     struct tm *currentTime = localtime(&now);
-
-    report.id = reportID;
 
     strftime(report.date, sizeof(report.date), "%d/%m/%Y", currentTime);
     strftime(report.time, sizeof(report.time), "%H:%M", currentTime);
@@ -36,7 +32,7 @@ void reportDisaster()
 
     printf("Severity (1-10): ");
     scanf("%d", &report.severity);
-    while (getchar() != '\n');
+    while(getchar() != '\n');
 
     printf("Description: ");
     fgets(report.description, sizeof(report.description), stdin);
@@ -48,30 +44,15 @@ void reportDisaster()
 
     strcpy(report.status, "Pending");
 
-    file = fopen("reports.txt", "a");
+    sqlite3 *db = openDatabase();
 
-    if (file == NULL)
-    {
-        printf("\nError creating report file!\n");
+    if(db == NULL)
         return;
-    }
 
-    fprintf(file, "=====================================\n");
-    fprintf(file, "Report ID      : %d\n", report.id);
-    fprintf(file, "Date           : %s\n", report.date);
-    fprintf(file, "Time           : %s\n", report.time);
-    fprintf(file, "Disaster Type  : %s\n", report.disasterType);
-    fprintf(file, "City           : %s\n", report.city);
-    fprintf(file, "District       : %s\n", report.district);
-    fprintf(file, "Severity       : %d\n", report.severity);
-    fprintf(file, "Description    : %s\n", report.description);
-    fprintf(file, "Reporter       : %s\n", report.reporter);
-    fprintf(file, "Status         : %s\n", report.status);
-    fprintf(file, "=====================================\n\n");
+    if(insertReport(db, report))
+        printf("\nReport saved successfully!\n");
+    else
+        printf("\nReport could not be saved!\n");
 
-    fclose(file);
-
-    reportID++;
-
-    printf("\nReport saved successfully!\n");
+    closeDatabase(db);
 }
