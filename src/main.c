@@ -10,6 +10,8 @@
 #include "../include/search.h"
 #include "../include/delete.h"
 #include "../include/statistics.h"
+#include "../include/status.h"
+#include "../include/edit.h"
 
 int main()
 {
@@ -134,13 +136,28 @@ int main()
 
             case 9:
 
-                printf("\nClosing ARES...\n");
-                return 0;
+    if(!isLoggedIn)
+    {
+        printf("\nPlease login first!\n");
+        break;
+    }
 
-            default:
+    updateStatus();
+    break;
 
-                printf("\nInvalid option!\n");
-                break;
+case 10:
+    if (!isLoggedIn)
+    {
+        printf("\nPlease login first!\n");
+        break;
+    }
+
+    editReport();
+    break;
+
+case 11:
+    printf("\nClosing ARES...\n");
+    return 0;
         }
     }
 

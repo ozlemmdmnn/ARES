@@ -4,7 +4,7 @@
 void showMenu()
 {
     printf("\n=====================================\n");
-    printf("              ARES v0.3\n");
+    printf("              ARES v0.4\n");
     printf("Artificial Response & Emergency System\n");
     printf("=====================================\n");
 
@@ -16,5 +16,7 @@ void showMenu()
     printf("6. Search Reports\n");
     printf("7. Delete Report\n");
     printf("8. Statistics\n");
-    printf("9. Exit\n");
+    printf("9. Update Status\n");
+    printf("10. Edit Report\n");
+    printf("11. Exit\n");
 }

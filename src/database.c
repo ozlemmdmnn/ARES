@@ -1,25 +1,16 @@
 #include <stdio.h>
+
 #include "../include/database.h"
+#include "../include/database_sqlite.h"
 
 void viewReports()
 {
-    FILE *file;
-    char line[256];
+    sqlite3 *db = openDatabase();
 
-    file = fopen("reports.txt", "r");
-
-    if (file == NULL)
-    {
-        printf("\nNo reports found.\n");
+    if (db == NULL)
         return;
-    }
 
-    printf("\n========== SAVED REPORTS ==========\n\n");
+    viewReportsSQLite(db);
 
-    while (fgets(line, sizeof(line), file))
-    {
-        printf("%s", line);
-    }
-
-    fclose(file);
+    closeDatabase(db);
 }

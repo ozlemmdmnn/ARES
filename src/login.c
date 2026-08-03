@@ -2,6 +2,7 @@
 #include <string.h>
 
 #include "../include/login.h"
+#include "../include/database_sqlite.h"
 
 char currentRole[50] = "";
 
@@ -9,18 +10,6 @@ int login()
 {
     char username[50];
     char password[50];
-
-    char fileUsername[50];
-    char filePassword[50];
-    char role[50];
-
-    FILE *file = fopen("users.txt", "r");
-
-    if (file == NULL)
-    {
-        printf("\nError: users.txt could not be opened!\n");
-        return 0;
-    }
 
     printf("\n========== LOGIN ==========\n");
 
@@ -30,29 +19,24 @@ int login()
     printf("Password: ");
     scanf("%49s", password);
 
-    while (fscanf(file,
-                  "%49[^;];%49[^;];%49[^\n]\n",
-                  fileUsername,
-                  filePassword,
-                  role) == 3)
+    sqlite3 *db = openDatabase();
+
+    if(db == NULL)
+        return 0;
+
+    if(loginSQLite(db, username, password, currentRole))
     {
-        if (strcmp(username, fileUsername) == 0 &&
-            strcmp(password, filePassword) == 0)
-        {
-            strcpy(currentRole, role);
+        closeDatabase(db);
 
-            printf("\n=====================================\n");
-            printf("Login Successful!\n");
-            printf("Role : %s\n", currentRole);
-            printf("=====================================\n");
+        printf("\nLogin Successful!\n");
+        printf("Role : %s\n", currentRole);
 
-            fclose(file);
-            return 1;
-        }
+        return 1;
     }
 
-    fclose(file);
+    closeDatabase(db);
 
     printf("\nInvalid username or password!\n");
+
     return 0;
 }
